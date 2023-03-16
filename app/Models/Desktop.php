@@ -9,5 +9,8 @@ class Desktop extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
+
+    public function processor(){
+        return $this->hasOne(Processor::class);
+    }
 }

@@ -9,5 +9,7 @@ class Processor extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
+    public function desktop() {
+        return $this->belongsTo(Desktop::class);
+    }
 }

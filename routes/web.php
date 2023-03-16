@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Desktop;
+use App\Models\Processor;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/processor', function() {
+    $processor = Desktop::find(2)->processor;
+    return $processor;
+});
+
+Route::get('/desktop', function() {
+    $desktop = Processor::find(1)->desktop;
+    return $desktop;
 });
