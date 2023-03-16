@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Desktop;
 use App\Models\Processor;
+use App\Models\Country;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,9 @@ Route::get('/processor', function() {
 Route::get('/desktop', function() {
     $desktop = Processor::find(1)->desktop;
     return $desktop;
+});
+
+Route::get('/city', function() {
+    $city = Country::find(1)->city;
+    return $city;
 });
